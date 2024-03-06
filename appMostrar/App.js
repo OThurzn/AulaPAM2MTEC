@@ -14,10 +14,10 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <Text>Digite seu E-mail:</Text>
+      <Text style={styles.texto}>Digite seu E-mail:</Text>
       <TextInput
       style={styles.caixatexto}
-      placeholder='Digite seu E-mail'
+      placeholder='Digite seu E-mail: '
       onChangeText={(Email) =>setEmail(Email)}>
       </TextInput>
       <Button 
@@ -38,11 +38,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   caixatexto: {
-    width:165,
-    borderWidth: 10,
+    width:200,
+    borderWidth: 5,
     borderColor: '#2296f3',
     height: 45,
-    padding: 10,
+    padding: 6,
     fontSize: 20,
     marginBottom: 20
   },
@@ -50,5 +50,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
     color: '#229'
-},
+  },
+  texto: {
+    textAlign: 'center',
+    fontSize: 30,
+    color: '#229',
+  },
+
+
 });
