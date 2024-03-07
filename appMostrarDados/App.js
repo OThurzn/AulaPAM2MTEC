@@ -24,6 +24,12 @@ export default function App() {
       
     }
   }
+  function limpar(){
+    setMostraCPF(null);
+    setMostraTelefone(null);
+    setMostraIdade(null);
+    setMostraSerie(null);
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Prencha os campos:</Text>
@@ -43,19 +49,23 @@ export default function App() {
       onChangeText={(idade) =>setidade(idade)}>
       </TextInput>
       <TextInput
-      style={styles.input}
+      style={styles.inputs}
       placeholder='Digite sua série: '
       onChangeText={(serie) =>setserie(serie)}>
       </TextInput>
 
-      <Button 
-      title="Exibir dados:"
-      onPress={exibir}></Button>
+      <Button style={styles.botao}
+        title="Exibir dados:"
+        onPress={exibir}></Button>
+        
+
       <Text style={styles.textoexibir}>CPF digitado: {mostrarCPF}</Text>
       <Text style={styles.textoexibir}>Telefone digitado: {mostrarTelefone}</Text>
       <Text style={styles.textoexibir}>Idade digitado: {mostrarIdade}</Text>
       <Text style={styles.textoexibir}>serie digitado: {mostrarSerie}</Text>
-      
+      <Button style={styles.botao}
+        title="Limpar dados"
+        onPress={limpar}></Button>
     </View>
   );
 }
@@ -67,4 +77,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titulo: {
+    padding: 6,
+    fontSize: 20
+  },
+  inputs: {
+    width:200,
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 45,
+    paddingtop: 6,
+    fontSize: 20,
+    marginBottom: 20
+  },
+  textoexibir: {
+    width:200,
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 45,
+    padding: 6,
+    fontSize: 15,
+    marginTop: 10,
+    marginBottom: 10
+  },
+
 });
